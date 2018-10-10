@@ -1,5 +1,6 @@
 FROM java:8
-COPY . /var/www/java
+COPY target/*.jar /var/www/java
+MKDIR /var/www/java/lib
+COPY target/lib/* /var/www/java/lib
 WORKDIR /var/www/java
-RUN javac Hello.java
-CMD ["java", "Hello"]
+CMD java -jar templebase-service-1.0-SNAPSHOT.jar
