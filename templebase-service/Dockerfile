@@ -1,6 +1,8 @@
-FROM java:8
-COPY target/*.jar /var/www/java
-MKDIR /var/www/java/lib
-COPY target/lib/* /var/www/java/lib
-WORKDIR /var/www/java
+FROM frolvlad/alpine-oraclejdk8
+EXPOSE 8060 
+
+COPY target/*.jar /home
+MKDIR /home/lib
+COPY target/lib/* /home/lib
+WORKDIR /home
 CMD java -jar templebase-service-1.0-SNAPSHOT.jar
