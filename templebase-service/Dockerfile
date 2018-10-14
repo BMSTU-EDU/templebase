@@ -5,4 +5,4 @@ COPY target/*.jar /home
 MKDIR /home/lib
 COPY target/lib/* /home/lib
 WORKDIR /home
-CMD java -jar templebase-service-1.0-SNAPSHOT.jar
+CMD java -Dserver.port=8060 -jar templebase-service-1.0-SNAPSHOT.jar
