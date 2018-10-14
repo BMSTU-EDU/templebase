@@ -17,10 +17,13 @@ pipeline {
             }
             
         }
-        stage('Deliver') { 
-            steps {
-                sh './jenkins/scripts/deliver.sh' 
-            }
+        stage("Docker build") {
+             steps {
+                    sh "docker build -t templebase:latest ."
+                    sh "docker tag templebase:latest localhost:5000/templebase:latest"
+                    sh "docker push localhost:5000/templebase:latest"
+             }
         }
+        
     }
 }
