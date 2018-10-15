@@ -6,18 +6,18 @@ pipeline {
         }
     }
     stages {
-        stage('Build') {
+        stage('Build maven') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Test') {
+        stage('Test maven') {
             steps {
                 sh 'mvn test'
             }
             
         }
-        stage('Build') {
+        stage('Build docker') {
             steps {
                 sh 'docker build --pull -t templebase:latest .'
             }
