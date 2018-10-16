@@ -19,17 +19,17 @@ pipeline {
         }
         stage('Build docker') {
             steps {
-                sh 'docker build --pull -t templebase:latest .'
+                sh '/usr/bin/docker build --pull -t templebase:latest .'
             }
         }
         stage('TAG') {
             steps {
-                sh 'docker tag templebase:latest localhost:5000/templebase:latest'
+                sh '/usr/bin/docker tag templebase:latest localhost:5000/templebase:latest'
             }
         }
         stage('Push to local registry') {
             steps {
-                sh 'docker push localhost:5000/templebase:latest'
+                sh '/usr/bin/docker push localhost:5000/templebase:latest'
             }
         }
     }
