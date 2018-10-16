@@ -90,7 +90,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
 
-                            <mainClass>ru.bmstu.templebase</mainClass>
+                            <mainClass>ru.bmstu.templebase.Main</mainClass>
                             <classpathPrefix>lib/</classpathPrefix>
                         </manifest>
 
