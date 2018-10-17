@@ -29,7 +29,7 @@ public class TempleService implements BaseManager<Temple, TempleFields> {
 
 	@Override
 	public Temple get(int id) {
-		return templeRepository.findById(Long.valueOf(id)).get();
+		return templeRepository.findById(id).get();
 	}
 
 	@Override

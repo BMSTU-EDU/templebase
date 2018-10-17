@@ -5,7 +5,7 @@ import ru.bmstu.templebase.model.Temple;
 
 import java.util.List;
 
-public interface TempleRepository extends CrudRepository<Temple, Long>  {
+public interface TempleRepository extends CrudRepository<Temple, Integer>  {
     List<Temple> findByName(String name);
 
 }
