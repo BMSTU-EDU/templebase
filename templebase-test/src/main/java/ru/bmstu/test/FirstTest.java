@@ -1,12 +1,10 @@
 package ru.bmstu.test;
 
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.ru.Дано;
 import cucumber.api.java.ru.Когда;
 import cucumber.api.java.ru.Тогда;
 import org.junit.Assert;
-import ru.bmstu.tamplebase.model.Temple;
+import ru.bmstu.templebase.model.Temple;
 
 import java.util.List;
 

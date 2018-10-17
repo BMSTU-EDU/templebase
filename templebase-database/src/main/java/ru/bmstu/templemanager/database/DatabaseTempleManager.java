@@ -1,7 +1,7 @@
 package ru.bmstu.templemanager.database;
 
-import ru.bmstu.tamplebase.model.Temple;
-import ru.bmstu.tamplebase.model.TempleFields;
+import ru.bmstu.templebase.model.Temple;
+import ru.bmstu.templebase.model.TempleFields;
 import ru.bmstu.templebase.manager.BaseManager;
 
 import java.sql.*;

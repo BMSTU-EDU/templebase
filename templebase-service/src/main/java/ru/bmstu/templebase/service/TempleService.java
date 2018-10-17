@@ -1,12 +1,9 @@
 package ru.bmstu.templebase.service;
 
-import com.concretepage.entity.Article;
-import com.concretepage.repository.ArticleRepository;
-import com.concretepage.service.IArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.bmstu.tamplebase.model.Temple;
-import ru.bmstu.tamplebase.model.TempleFields;
+import ru.bmstu.templebase.model.Temple;
+import ru.bmstu.templebase.model.TempleFields;
 import ru.bmstu.templebase.manager.BaseManager;
 import ru.bmstu.templebase.repository.TempleRepository;
 

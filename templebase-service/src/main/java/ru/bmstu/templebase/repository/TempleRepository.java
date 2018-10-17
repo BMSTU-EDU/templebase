@@ -1,8 +1,7 @@
 package ru.bmstu.templebase.repository;
 
-import com.concretepage.entity.Article;
 import org.springframework.data.repository.CrudRepository;
-import ru.bmstu.tamplebase.model.Temple;
+import ru.bmstu.templebase.model.Temple;
 
 import java.util.List;
 

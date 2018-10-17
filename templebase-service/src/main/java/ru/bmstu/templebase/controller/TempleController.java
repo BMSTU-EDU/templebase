@@ -1,9 +1,6 @@
 package ru.bmstu.templebase.controller;
 
-import com.concretepage.controller.ArticleInfo;
 import com.concretepage.entity.Article;
-import com.concretepage.service.IArticleService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -11,13 +8,11 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import ru.bmstu.tamplebase.model.Temple;
-import ru.bmstu.tamplebase.model.TempleFields;
+import ru.bmstu.templebase.model.Temple;
+import ru.bmstu.templebase.model.TempleFields;
 import ru.bmstu.templebase.manager.BaseManager;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 @RestController
