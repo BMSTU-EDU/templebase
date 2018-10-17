@@ -90,8 +90,10 @@ public class DatabaseTempleManager implements BaseManager<Temple, TempleFields> 
     private Temple mapTemple(ResultSet rs) throws Exception{
         int id = rs.getInt("id");
         String name = rs.getString("name");
-
-        return new Temple(id, name);
+        Temple temple = new Temple();
+        temple.setId(id);
+        temple.setName(name);
+        return temple;
     }
     @Override
     public Collection<Temple> getAll() {
