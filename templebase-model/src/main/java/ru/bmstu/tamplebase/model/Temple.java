@@ -14,7 +14,7 @@ public class Temple implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name="article_id")
+    @Column(name="id")
     @JsonInclude(Include.NON_NULL)
     private int id;
 
@@ -22,13 +22,6 @@ public class Temple implements Serializable {
     @Column(name="title")
     private String name;
 
-    public Temple() {
-    }
-
-    public Temple(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 
     public int getId() {
         return id;
