@@ -1,0 +1,14 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8090:80"
+    volumes: 
+      - ./html:/usr/share/nginx/html:ro
+  templebase:
+    image: localhost:5000/templebase:latest
+    network_mode: "host"
+    ports:
+      - "8060:8060"
+
