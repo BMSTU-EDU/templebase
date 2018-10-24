@@ -37,10 +37,11 @@ public class TempleController {
 
 	@PostMapping( produces= { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<Void> addTemple(@RequestBody Temple temple, UriComponentsBuilder builder) {
-		Article article = new Article();
 		try {
+			System.out.println(temple.getName());
 			templeservice.add(temple);
 		} catch (Exception e) {
+			e.printStackTrace();
 			return new ResponseEntity<Void>(HttpStatus.CONFLICT);
 		}
 
