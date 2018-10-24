@@ -46,7 +46,6 @@ public class TempleController {
 		}
 
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(builder.path("/temples/{id}").buildAndExpand(article.getArticleId()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	}
 
