@@ -17,25 +17,24 @@ import java.util.List;
 
 @RestController
 @RequestMapping("temples")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(maxAge = 3600)
 public class TempleController {
 	@Autowired
 	private BaseManager<Temple, TempleFields> templeservice;
 
-	@CrossOrigin(origins = "http://localhost:8060")
+	
 	@GetMapping(value= "{id}", produces= { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<Temple> getTempleById(@PathVariable("id") Integer id) {
 		return new ResponseEntity<Temple>(templeservice.get(id), HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:8060")
 	@GetMapping( produces= { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<List<Temple>> getTemples() {
 
 		return new ResponseEntity<List<Temple>>(new ArrayList(templeservice.getAll()), HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:8060")
+
 	@PostMapping( produces= { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<Void> addTemple(@RequestBody Temple temple, UriComponentsBuilder builder) {
 		Article article = new Article();
@@ -50,7 +49,7 @@ public class TempleController {
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	}
 
-	@CrossOrigin(origins = "http://localhost:8060")
+	
 	@PutMapping(produces= { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<Temple> update(@RequestBody Temple temple) {
 
@@ -58,7 +57,7 @@ public class TempleController {
 		return new ResponseEntity<Temple>(temple, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:8060")
+	
 	@DeleteMapping(value= "{id}", produces= { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<Void> deleteArticle(@PathVariable("id") Integer id) {
 		templeservice.delete(id);
