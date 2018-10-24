@@ -17,18 +17,34 @@
 
 
     <script>
-      $(document).ready(function(){
-	$.getJSON("http://localhost:8060/temples", function (data) {
-    $(data.items).each(function (i, temple) {
-        append(temple.id, temple.name);
-    });
-});
-      });
+	$(document).ready(function(){
+		$.getJSON("http://localhost:8060/temples", function (data) {
+    			$(data).each(function (i, temple) {
+       				 append(temple.id, temple.name);
+    			});
+		});
+
+		$("#tAdd").click(function(){
+  
+			$.ajax({
+  				url:"http://localhost:8060/temples",
+  				type:"POST",
+ 				data: '{"name": "'+$("#tName").val() +'"}',
+  				contentType:"application/json; charset=utf-8",
+  				dataType:"json",
+ 				 success: function(){
+    					alert('Submitted!');
+  				}
+			});
+		});
+	});
+ 
 
       function append(id, name) {
-       $(".container",this).append('<div class="row"><div class="col-sm">'+id+'</div><div class="col-sm">'+name+'</div></div>');
+       $("#grid").append('<div class="row"><div class="col-xs-12 col-sm-6 col-md-6">'+id+'</div><div class="col-xs-12 col-sm-6 col-md-6">'+name+'</div></div>');
       } 
     </script>
+
   </head>
 
   
@@ -36,10 +52,54 @@
   <body>
 
     
-    <div class="container">
-
+    <div id="grid" class="container">
+		<div class="row"><div class="col-xs-12 col-sm-6 col-md-6">#</div><div class="col-xs-12 col-sm-6 col-md-6">Name</div></div>
       
     </div><!-- /.container -->
+
+ <div class="container">
+      <div class="row">
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+
+           
+
+                	<div class="panel panel-primary">
+
+                     		<div class="panel-heading">
+
+                        		<div class="panel-title">Add temple</div>
+
+                   	 	</div>
+			<div class="panel-body">
+
+        			<div class="row">
+
+           				
+
+           				<div class="col-xs-12 col-sm-6 col-md-6">
+
+               					<div class="form-group">
+
+                    					<input id='tName' type="text" class="form-control input-sm" placeholder="name">
+
+                				</div>
+
+            				</div>
+
+        			</div>
+
+       			
+        		<input id='tAdd' type="submit" value="Add" class="btn btn-info btn-block">
+
+		</div>
+           </div>
+
+	</div>
+
+
+       </div>
+    </div>
 
   </body>
 </html>
