@@ -13,7 +13,7 @@ public class Temple implements Serializable {
 
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+//    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name="id")
     @JsonInclude(Include.NON_NULL)
     private int id;
